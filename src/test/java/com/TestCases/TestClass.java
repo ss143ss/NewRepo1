@@ -14,22 +14,7 @@ public class TestClass {
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://www.amazon.com"); 
-<<<<<<< HEAD
- 
 	}
-=======
-		
-		 
-
-
-		driver.get("https://www.amazon.com");  
-//Resolve Conflicting
-		}
->>>>>>> 86fca9a9cdba15b8329a1be90e029754764c7792
-
-
-
-
 
 
 }
