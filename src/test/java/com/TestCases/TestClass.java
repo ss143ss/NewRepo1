@@ -16,6 +16,11 @@ public class TestClass {
 		driver.get("https://www.amazon.com"); 
 	}
 
+<<<<<<< HEAD
  //i
 	////csc
+=======
+ 
+	
+>>>>>>> ced07eb3dfa98c4b937a28652bf98123c19212d3
 }
