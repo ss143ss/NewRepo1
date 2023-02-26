@@ -16,11 +16,11 @@ public class TestClass {
 		driver.get("https://www.amazon.com"); 
 
 
-<<<<<<< HEAD
-	}//eeeeeeeeeeee1234
-=======
-	}//e
->>>>>>> e038e1ab8f2e4a984df7b5d8a12db26c34cd8f96
 
-//loal changesfdffdf
+	}
+
+	}//e
+
+
+
 }
