@@ -15,7 +15,5 @@ public class TestClass {
 
 		driver.get("https://www.amazon.com"); 
 
-//ss/dvdvdvdvd
-
-	}//ocal changes
+	}
 }
