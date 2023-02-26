@@ -13,6 +13,10 @@ public class TestClass {
 		WebDriverManager.chromedriver().setup();;
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.com");
+<<<<<<< HEAD
 		//Making changes in Local and pushing
 	}  vsdvsvd
+=======
+
+>>>>>>> aa891fa745cfe79226b2db92a4a6748a12f0ff1a
 }
