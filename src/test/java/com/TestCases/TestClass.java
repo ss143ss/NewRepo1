@@ -12,15 +12,15 @@ public class TestClass {
 	public void TC1() {
 		WebDriverManager.chromedriver().setup();;
 		WebDriver driver = new ChromeDriver();
-<<<<<<< HEAD
+
 		driver.get("https://www.amazon.com"); 
-		//////////////////////////cdcptfgnmc
+		
 		 
-=======
+
 
 		driver.get("https://www.amazon.com");  //dssds
->>>>>>> c53ba4871ebd323e0ba497e306c7365f6c83479b
-	}
+//Resolve Conflicting
+		}
 
 
 
