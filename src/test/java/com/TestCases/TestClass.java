@@ -18,7 +18,7 @@ public class TestClass {
 		 
 
 
-		driver.get("https://www.amazon.com");  //dssds
+		driver.get("https://www.amazon.com");  
 //Resolve Conflicting
 		}
 
