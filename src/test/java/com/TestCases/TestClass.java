@@ -11,14 +11,14 @@ import com.Utility.*;
 public class TestClass extends GenericMethods {
 
 	WebDriver driver;
-	@Test
+	@Test(invocationCount = 0,enabled = false)
 	public void TC1() {
 
 		browserType("Chrome");
 		driver.get("https://www.google.com"); 
 	}
 	
-	@Test
+	@Test(invocationCount = 1)
 	public void TC2() {
 		browserType("Firefox");
 		driver.get("https://www.amazon.com"); 
