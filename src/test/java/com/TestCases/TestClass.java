@@ -12,6 +12,9 @@ public class TestClass {
 	public void TC1() {
 		WebDriverManager.chromedriver().setup();;
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.google.com"); 
+
+		driver.get("https://www.amazon.com");  
+
 	}
+
 }
