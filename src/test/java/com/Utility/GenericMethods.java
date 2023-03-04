@@ -5,12 +5,16 @@ import java.io.File;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GenericMethods extends Reports {
 
@@ -68,5 +72,22 @@ public class GenericMethods extends Reports {
 		}catch(Exception e) {
 			
 		}
+	}
+	
+	public static void browserType(String browser) {
+
+		if(browser.equalsIgnoreCase("Chrome"))
+		{
+			WebDriverManager.chromedriver().setup();;
+			driver = new ChromeDriver();
+		}else if(browser.equalsIgnoreCase("Firefox")) {
+			WebDriverManager.firefoxdriver();
+		}
+		else if(browser.equalsIgnoreCase("IE")) {
+			WebDriverManager.iedriver().setup();
+			driver = new InternetExplorerDriver();
+		}
+		else { driver =null;}
+
 	}
 }
