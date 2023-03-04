@@ -12,6 +12,6 @@ public class TestClass {
 	public void TC1() {
 		WebDriverManager.chromedriver().setup();;
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://wwwURL.com"); 
+		driver.get("https://www.google.com"); 
 	}
 }
