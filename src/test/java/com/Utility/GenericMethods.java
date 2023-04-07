@@ -1,6 +1,7 @@
 package com.Utility;
 
 import java.io.File;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -8,6 +9,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Proxy.ProxyType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +20,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -234,5 +237,49 @@ public class GenericMethods extends Reports {
 	
 	public static void waitFor(String ele) {
 		logger.info("Waiting for Element : "+ele);
+		driver.manage().timeouts().implicitlyWait(waitforValue,TimeUnit.SECONDS);
+	}
+	
+	public static boolean isDisabled(WebElement ele) {
+		boolean isEnabled= false;
+//		ele.getAttribute("Enable");)
+		
+		if(ele.isEnabled()) {
+			isEnabled = true;
+		}
+		return isEnabled;
+	}
+	
+	public static void selectByValue(WebElement ele, String selectBy,String Value,int index,String visibleText) {
+
+		Select sel = new Select(ele);
+		switch(selectBy) {
+		case "value":
+			List<WebElement> options = sel.getOptions();
+			for(WebElement e:options) {
+				if(e.getText().equalsIgnoreCase(Value)) {
+					e.click();}
+				break;
+			}
+		case "index":
+			sel.selectByIndex(index);
+			break;
+		case "visibleText":
+			sel.selectByVisibleText(visibleText);
+			break;
+		default:
+			System.out.println("Not selected any drop down");
+			break;
+		}
+
+	}
+	
+	public static Actions actionRef(WebDriver driver) {
+		Actions act = new Actions(driver);
+		return act;
+	}
+	
+	public static void rightClick(WebElement ele) {
+		actionRef(driver).contextClick(ele);
 	}
 }
