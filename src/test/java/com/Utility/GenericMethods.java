@@ -2,6 +2,7 @@ package com.Utility;
 
 import java.io.File;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
@@ -27,15 +28,23 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class GenericMethods extends Reports {
 
 	public static int screenCount;
+	public static int waitforValue=5000;
 	
 	public static void click(WebElement element, String ButtonName) {
-		explicityWait();
+//		explicityWait(element);
 		elementToBeClick(element);
 	}
 		
-	public static void explicityWait() {
-		
-	}
+//	public static void enterText(WebElement element) {
+//		try {
+//			WebDriverWait wait = new WebDriverWait(driver, 2000);
+//			wait.until(ExpectedConditions.element);
+//		}catch(Exception e) {
+////			failTest("Waited for 200 Seconds "+element +e.getMessage());
+//		}
+//		
+//	}	
+	
 	
 	public static void elementToBeClick(WebElement element) {
 		try {
@@ -211,5 +220,19 @@ public class GenericMethods extends Reports {
 	
 	public int stringToIntegerValue(String str) {
 		return Integer.parseInt(str);
+	}
+	
+	public void enterText(WebElement el, String value) {
+		try {
+			elementToBeClick(el);
+			el.sendKeys(value);
+		}catch(Exception e) {
+			logger.info("Awaited for 2000 sec Element not.");
+			failTest("Awaited for 2000 sec Element not");
+		}
+	}
+	
+	public static void waitFor(String ele) {
+		logger.info("Waiting for Element : "+ele);
 	}
 }
